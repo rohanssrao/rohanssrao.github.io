@@ -1,0 +1,214 @@
+@media screen and (max-device-width: 400px) {
+   #logo {
+      width: 274px;
+      height: 65px;
+      margin-top: -6px !important;
+      margin-left: 35px;
+   }
+}
+
+body {
+   display: none;
+   font-family: 'Slabo 27px', 'Garamond';
+}
+
+.select::selection {
+   background: rgb(106, 36, 162);
+   color: rgb(4, 105, 99);
+}
+
+.lightselect::selection {
+   background: rgb(185, 126, 232);
+   color: rgb(4, 105, 99);
+}
+
+
+#home {
+  min-height: 600px;
+  height: 600px;
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+
+}
+
+
+#home article {
+  position: absolute;
+  text-align: center;
+  top: 230px;
+  color: white;
+  font-size: 6em;
+  font-weight: bold;
+  text-shadow: 1px 1px #ff4500,
+               2px 2px #ff4500,
+               3px 3px #ff4500;
+  transition: all 0.3s ease;
+}
+
+#home article:hover {
+   text-shadow: 1px 1px #ff4500,
+                2px 2px #ff4500,
+                3px 3px #ff4500,
+                4px 4px #ff4500,
+                5px 5px #ff4500,
+                6px 6px #ff4500;
+   transform: translate(-3px, -3px);
+}
+
+.parallax-container {
+    min-height: 400px;
+    width: 100%;
+}
+
+#mainbtn {
+   padding-top: 7px;
+   padding-bottom: 10px;
+   padding-left: 20px;
+   padding-right: 20px;
+   margin-top: 360px;
+   height: 50px;
+   border-radius: 7px;
+   font-weight: bold;
+   color: #1b1b1b;
+   font-size: 20px;
+   background-color: rgb(255, 77, 0);
+   transition: all 0.3 ease;
+   -webkit-box-shadow: 13px 12px 43px -7px rgba(0,0,0,0.75);
+   -moz-box-shadow: 13px 12px 43px -7px rgba(0,0,0,0.75);
+   box-shadow: 13px 12px 43px -7px rgba(0,0,0,0.75);
+}
+
+#mainbtn:hover {
+   background-color: rgb(255, 109, 27);
+}
+
+#nav-mobile a {
+   font-size: 17px;
+   text-decoration: none;
+}
+
+#nav-mobile a:hover {
+   color: white;
+}
+
+.nav-wrapper .brand-logo {
+   border-radius: 10px;
+}
+
+body {
+   background-color: #f8f8f8;
+   height: 1000px;
+}
+
+#main {
+   height: 545px;
+}
+
+#form {
+   display: block;
+}
+
+
+#jumbo {
+   background-color: #00acc1;
+   text-align: center;
+   vertical-align: middle;
+}
+
+#tealripple, #orangeripple {
+   margin: 50px;
+   padding: 30px;
+   font-size: 20px;
+   display: inline-block;
+}
+
+#tealripple {
+   border-radius: 10px;
+   height: 150px;
+   cursor: wait;
+}
+
+#orangeripple {
+   border-radius: 50%;
+   height: 170px;
+   width: 170px;
+   padding-top: 40px;
+   padding-left: 30px;
+   margin-left: 40px;
+   cursor: crosshair;
+}
+
+#tealripple i {
+   margin-left: 28px;
+}
+
+#orangeripple p {
+   margin-top: 0px;
+}
+
+
+#name {
+   width: 200px !important;
+   display: inline-block;
+   margin: 20px !important;
+   font-size: 15px;
+}
+
+#form label {
+   font-weight: normal;
+   margin-left: 12px;
+   margin-top: 21px;
+}
+
+#tealripple p {
+   margin-top: 20px;
+}
+
+#submit {
+   display: inline-block;
+   margin: 10px;
+   padding-bottom: 40px;
+   padding-left: 20px;
+   padding-right: 20px;
+   padding-top: 5px;
+   border-radius: 100px;
+}
+
+.textcard {
+   border-radius: 5px;
+   display: block;
+   margin: 10px !important;
+   padding: 15px;
+   font-size: 16px;
+   font-weight: bold;
+   box-shadow: 0px 3px 15px grey;
+}
+
+footer {
+   font-size: .85em
+}
+
+#firstfooter {
+   position: fixed;
+   bottom: 0;
+   left: 5px;
+   text-shadow: 0px 0px 1px;
+   color: rgb(255, 77, 0);
+}
+
+#secondfooter {
+   position: fixed;
+   bottom: 0;
+   right: 10px;
+   text-shadow: 0px 0px 1px;
+}
+
+#secondfooter a {
+   color: rgb(255, 11, 4);
+   transition: all 0.3s ease;
+}
+
+#secondfooter a:hover {
+   text-decoration: underline;
+}

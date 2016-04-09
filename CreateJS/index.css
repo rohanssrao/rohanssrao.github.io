@@ -1,0 +1,45 @@
+html {
+   font-size: 62.5%;
+}
+
+#demoCanvas {
+   position: fixed;
+   top: 50%;
+   left: 50%;
+   -ms-transform: translate(-50%, -50%);
+   -webkit-transform: translate(-50%, -50%);
+   transform: translate(-50%, -50%);
+   border: 2px solid crimson;
+   border-radius: 2.0em;
+   transition: all 0.4s ease;
+   box-shadow: 5px 15px 40px grey;
+   background-color: white;
+}
+
+@media (orientation:portrait) {
+   #demoCanvas {
+      width: 80%;
+   }
+}
+
+@media (orientation:landscape) {
+   #demoCanvas {
+      height: 80%;
+   }
+}
+
+#demoCanvas:hover {
+   border-radius: 3.5em;
+}
+
+body {
+   transition: all 0.4s ease;
+}
+
+footer {
+   font-family: 'Roboto Slab';
+   font-size: 1em;
+   position: fixed;
+   bottom: 0;
+   left: 5px;
+}

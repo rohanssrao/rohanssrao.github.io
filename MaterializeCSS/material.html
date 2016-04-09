@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8" />
+      <meta name="theme-color" content="rgb(255, 84, 0)">
+      <title>Material!</title>
+      <!-- Google Material Icons -->
+      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!-- Favicon -->
+      <link rel="icon" type="image/png" href="favicon.png" />
+      <!-- Slabo 27px Font -->
+      <link href='https://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css' />
+      <!-- Materialize CSS -->
+      <link rel="stylesheet" href="CSS/materialize.min.css" />
+      <!-- Main CSS file -->
+      <link rel="stylesheet" href="CSS/material.css" />
+      <!-- Snarl CSS -->
+      <link rel="stylesheet" href="../snarl.min.css" />
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+   </head>
+   <body>
+
+
+      <nav style="background-color: #009688;">
+        <div class="nav-wrapper">
+             <a href="https://rohansrao.weebly.com/" target="_blank" class="brand-logo"><img id="logo" width="305" height="86" style="margin-top: -15px;" src="namelogo.png" /></a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="#!" class="waves-effect waves-light select">A random button</a></li>
+            <li><a href="#!" class="waves-effect waves-light select">Another random button</a></li>
+            <li><a href="#!" class="waves-effect waves-light select">Yet another random button</a></li>
+          </ul>
+         <ul id="slide-out" class="side-nav">
+            <li><a href="#!" class="waves-effect waves-light select">A random button</a></li>
+            <li><a href="#!" class="waves-effect waves-light select">Another random button</a></li>
+            <li><a href="#!" class="waves-effect waves-light select">Yet another random button</a></li>
+         </ul>
+         <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons" style="margin-left: 10px;">tag_faces</i></i></i></a>
+        </div>
+      </nav>
+
+
+
+         <section id="home" style="text-align: center;" class="waves-effect">
+            <div class="parallax-container" style="min-height: 600px;height: 600px;margin: 0 auto;text-align: center;position: absolute;" data-parallax="scroll" data-speed=0.4 data-image-src="parallaxbackground.jpg">
+               <article class="select" style="width: 100%">Hello!</article>
+               <a class="waves-effect waves-light btn select" id="mainbtn" style="cursor: move;">GO TO BOTTOM</a>
+            </div>
+         </section>
+
+
+
+
+         <section id="main" style="text-align: center">
+            <div>
+               <div class='waves-effect waves-light card-panel teal lighten-3' id='tealripple'>
+                  <div class="preloader-wrapper small active">
+                   <div class="spinner-layer spinner-red-only">
+                     <div class="circle-clipper left">
+                       <div class="circle"></div>
+                     </div><div class="gap-patch">
+                       <div class="circle"></div>
+                     </div><div class="circle-clipper right">
+                       <div class="circle"></div>
+                     </div>
+                   </div>
+                  </div>
+                  <p>Hello there!</p>
+               </div>
+
+               <div class='waves-effect waves-yellow waves-circle card-panel orange' id='orangeripple'>
+                  <div class="preloader-wrapper small active">
+                   <div class="spinner-layer spinner-teal-only">
+                     <div class="circle-clipper left">
+                       <div class="circle"></div>
+                     </div><div class="gap-patch">
+                       <div class="circle"></div>
+                     </div><div class="circle-clipper right">
+                       <div class="circle"></div>
+                     </div>
+                   </div>
+                  </div>
+
+                  <p>Click me!</p>
+               </div>
+
+
+               <div id="form">
+                  <div class="input-field" style="display: inline-block;">
+                     <input type="text" id="name" class="lightselect"/>
+                     <label for="name" class="lightselect">Type anything here</label>
+                  </div>
+                  <a class="waves-light btn disabled lightselect" id="submit">Submit</a>
+               </div>
+            </div>
+
+         <!--
+            <div class="fixed-action-btn" style="bottom: 40px; right: 55px;">
+              <a class="btn-floating btn-large red waves-effect waves-light">
+                <i class="large material-icons">mode_edit</i>
+              </a>
+              <ul>
+                <li><a class="btn-floating red waves-effect waves-light"><i class="material-icons">insert_chart</i></a></li>
+                <li><a class="btn-floating yellow darken-1 waves-effect waves-light"><i class="material-icons">format_quote</i></a></li>
+                <li><a class="btn-floating green waves-effect waves-light"><i class="material-icons">publish</i></a></li>
+                <li><a class="btn-floating blue waves-effect waves-light"><i class="material-icons">attach_file</i></a></li>
+              </ul>
+            </div>
+            -->
+
+            <footer id='firstfooter'><b class="lightselect">© No one</b></footer>
+            <footer id='secondfooter' style="color: rgb(255, 77, 0);"><b class="lightselect">Made by <a href="https://rohansrao.weebly.com" target="_blank">Rohan Rao</a> | Powered by <a href="http://www.materializecss.com" target="_blank">Materialize</a> | Created with <a href="https://atom.io" target="_blank">Atom</a></b></footer>
+         </section>
+
+
+      <!-- jQuery -->
+      <script src="../jquery.min.js"></script>
+      <!-- Main JS file -->
+      <script src='Scripts/material.js'></script>
+      <!-- Smoothscroll -->
+      <script src="../jQuery.scrollSpeed.js"></script>
+      <!-- randomColor() -->
+      <script src='https://cdnjs.cloudflare.com/ajax/libs/randomcolor/0.4.4/randomColor.min.js'></script>
+      <!-- Materialize JS -->
+      <script src="Scripts/materialize.min.js"></script>
+      <!-- Snarl JS -->
+      <script src="../snarl.min.js"></script>
+      <!-- Parallax JS -->
+      <script src="../parallax.min.js"></script>
+   </body>
+</html>
