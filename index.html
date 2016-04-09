@@ -3,21 +3,21 @@
 <head>
    <title>RohanRaoLtd</title>
    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab|Roboto+Condensed|Slabo+27px' rel='stylesheet' type='text/css'>
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=false">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
    <link rel="shortcut icon" href="http://orig04.deviantart.net/e8d1/f/2014/276/f/6/cm_torch_icon_inspired_by_material_design_by_hitfan1996-d81gff9.png">
    <style>
       a { display: block; margin: .7em; }
-      body { background: rgb(246, 246, 246); text-align: center; font-family: 'Slabo 27px';}
+      body { background: rgb(238, 238, 238); text-align: center; font-family: 'Slabo 27px';}
    </style>
 </head>
 <body>
    <h1>HI THERE!</h1>
    <p>Click these links to go to my latest and (not so) greatest projects.</p>
    <br />
-   <a href="../CreateJS/index.html" class="btn waves-effect waves-light">CreateJS Demo</a>
-   <a href="../MaterializeCSS/material.html" class="btn waves-effect waves-light">Material!</a>
-   <a href="../fun.html" class="btn waves-effect waves-light">Fun!</a>
+   <a id="firstA" href="CreateJS/index.html" class="btn waves-effect waves-light">CreateJS Demo</a>
+   <a id="secondA" href="MaterializeCSS/material.html" class="btn waves-effect waves-light">Material!</a>
+   <a id="thirdA" href="fun.html" class="btn waves-effect waves-light">Fun!</a>
 
    <footer style="position: fixed; bottom: 0; text-align: left; margin-left: 5px;">
       Rohan Rao ☺
@@ -25,5 +25,9 @@
 
    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+   <script src='https://cdnjs.cloudflare.com/ajax/libs/randomcolor/0.4.4/randomColor.min.js'></script>
+   <script>
+      $('a.btn').each(function() {$(this).css('background-color', randomColor());})
+   </script>
 </body>
 </html>

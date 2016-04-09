@@ -1,6 +1,8 @@
 
 $(document).ready(function() {
 
+	function isTouchDevice(){ return (window.ontouchstart !== undefined); }
+
 	$('.blue').hover(function() {
 		$('.divval').text('pls i is beg u');
 		$('.burger').html('');
@@ -41,19 +43,20 @@ $(document).ready(function() {
 	});
 
  // Use custom cursor for .ripple div
-
-	$('.ripple').mouseleave(function(){
-      $('#mycursor').hide();
-      return false;
-   });
-   $('.ripple').mouseenter(function(){
-      $('#mycursor').show();
-      return false;
-   });
-   $('.ripple').mousemove(function(e){
-      $('#mycursor').css('left', e.clientX - 33).css('top', e.clientY - 111);
-   });
-
+	if(isTouchDevice() === false) {
+		$('.ripple').mouseleave(function(){
+	      $('#mycursor').hide();
+	      return false;
+	   });
+	   $('.ripple').mouseenter(function(){
+	      $('#mycursor').show();
+	      return false;
+	   });
+	   $('.ripple').mousemove(function(e){
+	      $('#mycursor').css('left', e.clientX - 33).css('top', e.clientY - 111);
+	   });
+	}
+	
  // Attach material design ripples with waves.js
 
 	Waves.attach('.blue', ['waves-block']);

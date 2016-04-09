@@ -82,7 +82,7 @@ footer {
 	padding: 10px;
 	font-size: 25px;
 	transition: all 0.4s ease;
-	cursor: url(./blank.cur), none !important;
+	cursor: none !important;
 }
 
 .ripple:hover {
