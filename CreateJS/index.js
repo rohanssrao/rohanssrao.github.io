@@ -5,7 +5,7 @@ $(document).ready(function() {
   var canvHeight = canvas.height();
   var canvWidth = canvas.width();
   createjs.Ticker.setFPS(60);
-  myCircle.graphics.beginFill(randomColor()).drawCircle(0, 0, (canvas.height() / 6));
+  myCircle.graphics.beginFill(randomColor()).drawCircle(0, 0, (canvWidth / 6));
   myCircle.x = (canvas.height() / 8);
   myCircle.y = (canvas.height() / 2);
   stage.addChild(myCircle);
@@ -19,14 +19,15 @@ $(document).ready(function() {
   */
      createjs.Ticker.on("tick", stage);
      createjs.Tween.get(myCircle, {loop: true})
-        .to({x: canvWidth}, 2000)
-        .to({x: 0});
+        .to({x: canvWidth - (canvWidth / 6)}, 2000)
+        .to({x: canvWidth / 6}, 2000);
      createjs.Ticker.addEventListener("tick", function() {
        if (myCircle.y > stage.canvas.width) { myCircle.y = 0; }
      });
 
   var text = new createjs.Text("Click the circle!", "bold 60px Roboto Slab", "#ff7700");
-  text.x = canvas.width() / 17;
+  var b = text.getBounds();
+  text.x = canvWidth - b.width/2;
   stage.addChild(text);
   stage.update();
 
