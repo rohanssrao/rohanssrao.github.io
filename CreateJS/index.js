@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  function isTouchDevice(){ return (window.ontouchstart !== undefined); }
   var stage = new createjs.Stage("demoCanvas");
   var myCircle = new createjs.Shape();
   var canvas = $("#demoCanvas");
@@ -6,8 +7,8 @@ $(document).ready(function() {
   var canvWidth = canvas.width();
   createjs.Ticker.setFPS(60);
   myCircle.graphics.beginFill(randomColor()).drawCircle(0, 0, (canvWidth / 6));
-  myCircle.x = (canvas.height() / 8);
-  myCircle.y = (canvas.height() / 2);
+  myCircle.x = (canvWidth / 6);
+  myCircle.y = (canvHeight / 2);
   stage.addChild(myCircle);
   /*
   createjs.Ticker.addEventListener("tick", function() {
@@ -19,15 +20,16 @@ $(document).ready(function() {
   */
      createjs.Ticker.on("tick", stage);
      createjs.Tween.get(myCircle, {loop: true})
-        .to({x: canvWidth - (canvWidth / 6)}, 2000)
+        .to({x: canvWidth - (canvWidth / 6) - 10}, 2000)
         .to({x: canvWidth / 6}, 2000);
      createjs.Ticker.addEventListener("tick", function() {
        if (myCircle.y > stage.canvas.width) { myCircle.y = 0; }
      });
 
   var text = new createjs.Text("Click the circle!", "bold 60px Roboto Slab", "#ff7700");
-  var b = text.getBounds();
-  text.x = canvWidth - b.width/2;
+  if (isTouchDevice() === true) { text.set({text: "Tap the circle!"}); }
+  text.x = canvWidth / 2;
+  text.textAlign = "center";
   stage.addChild(text);
   stage.update();
 

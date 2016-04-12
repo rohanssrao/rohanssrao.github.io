@@ -11,7 +11,7 @@ html {
    transform: translate(-50%, -50%);
    border: 2px solid crimson;
    border-radius: 2.0em;
-   transition: border-radius border 0.4s ease;
+   transition: border-radius 0.2s, border 0.4s, background-color 0.4s, box-shadow 0.4s;
    box-shadow: 5px 15px 40px grey;
    background-color: white;
 }
