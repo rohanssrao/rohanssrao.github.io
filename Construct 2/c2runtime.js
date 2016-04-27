@@ -15426,6 +15426,102 @@ cr.plugins_.Mouse = function(runtime)
 }());
 ;
 ;
+cr.plugins_.Rex_Pause = function(runtime)
+{
+	this.runtime = runtime;
+};
+(function ()
+{
+	var pluginProto = cr.plugins_.Rex_Pause.prototype;
+	pluginProto.Type = function(plugin)
+	{
+		this.plugin = plugin;
+		this.runtime = plugin.runtime;
+	};
+	var typeProto = pluginProto.Type.prototype;
+	typeProto.onCreate = function()
+	{
+	};
+	pluginProto.Instance = function(type)
+	{
+		this.type = type;
+		this.runtime = type.runtime;
+	};
+	var instanceProto = pluginProto.Instance.prototype;
+	instanceProto.onCreate = function()
+	{
+        this.is_pause = false;
+        this.previous_timescale = 0;
+	};
+	instanceProto.onDestroy = function ()
+	{
+        this._toogle_pause(false);
+	};
+	instanceProto._toogle_pause = function (state)
+	{
+        var cur_state = this.is_pause;
+        if (state == cur_state)
+            return;
+        this.is_pause = (!cur_state);
+        var trig_method;
+        if (this.is_pause)
+        {
+            this.previous_timescale = this.runtime.timescale;
+            this.runtime.timescale = 0;
+            trig_method = cr.plugins_.Rex_Pause.prototype.cnds.OnPause;
+        }
+        else
+        {
+            this.runtime.timescale = this.previous_timescale;
+            this.previous_timescale = 0;
+            trig_method = cr.plugins_.Rex_Pause.prototype.cnds.OnResume;
+        }
+        this.runtime.trigger(trig_method, this);
+	};
+	instanceProto.saveToJSON = function ()
+	{
+		return { "p": this.is_pause,
+                 "ts": this.previous_timescale };
+	};
+	instanceProto.loadFromJSON = function (o)
+	{
+		this.is_pause = o["p"];
+		this.previous_timescale = o["ts"];
+	};
+	function Cnds() {};
+	pluginProto.cnds = new Cnds();
+	Cnds.prototype.OnPause = function ()
+	{
+		return true;
+	};
+	Cnds.prototype.OnResume = function ()
+	{
+		return true;
+	};
+	Cnds.prototype.IsPause = function ()
+	{
+		return this.is_pause;
+	};
+	function Acts() {};
+	pluginProto.acts = new Acts();
+    Acts.prototype.TooglePause = function ()
+	{
+        this._toogle_pause();
+	};
+    Acts.prototype.SetState = function (state)
+	{
+        var is_pause = (state == 0);
+        this._toogle_pause(is_pause);
+	};
+	function Exps() {};
+	pluginProto.exps = new Exps();
+    Exps.prototype.PreTimescale = function (ret)
+	{
+	    ret.set_float( this.previous_timescale );
+	};
+}());
+;
+;
 cr.plugins_.Sprite = function(runtime)
 {
 	this.runtime = runtime;
@@ -18599,10 +18695,11 @@ cr.behaviors.scrollto = function(runtime)
 	behaviorProto.acts = new Acts();
 }());
 cr.getObjectRefTable = function () { return [
-	cr.plugins_.Mouse,
 	cr.plugins_.Keyboard,
-	cr.plugins_.Text,
+	cr.plugins_.Mouse,
 	cr.plugins_.Sprite,
+	cr.plugins_.Text,
+	cr.plugins_.Rex_Pause,
 	cr.plugins_.TiledBg,
 	cr.behaviors.EightDir,
 	cr.behaviors.scrollto,
@@ -18611,19 +18708,25 @@ cr.getObjectRefTable = function () { return [
 	cr.behaviors.destroy,
 	cr.behaviors.Fade,
 	cr.system_object.prototype.cnds.EveryTick,
+	cr.plugins_.Text.prototype.acts.SetText,
+	cr.plugins_.Mouse.prototype.acts.SetCursorSprite,
+	cr.system_object.prototype.exps.fps,
+	cr.plugins_.Rex_Pause.prototype.cnds.IsPause,
 	cr.plugins_.Sprite.prototype.acts.SetTowardPosition,
 	cr.plugins_.Mouse.prototype.exps.X,
 	cr.plugins_.Mouse.prototype.exps.Y,
-	cr.plugins_.Text.prototype.acts.SetText,
-	cr.plugins_.Mouse.prototype.acts.SetCursorSprite,
 	cr.plugins_.Mouse.prototype.cnds.OnClick,
+	cr.system_object.prototype.cnds.CompareVar,
 	cr.plugins_.Sprite.prototype.acts.Spawn,
+	cr.plugins_.Sprite.prototype.acts.SetAngle,
+	cr.plugins_.Sprite.prototype.exps.Angle,
+	cr.plugins_.Mouse.prototype.cnds.IsButtonDown,
+	cr.system_object.prototype.cnds.Every,
 	cr.plugins_.Sprite.prototype.cnds.OnCollision,
 	cr.behaviors.scrollto.prototype.acts.Shake,
 	cr.plugins_.Sprite.prototype.acts.SubInstanceVar,
 	cr.plugins_.Sprite.prototype.acts.Destroy,
 	cr.system_object.prototype.cnds.OnLayoutStart,
-	cr.plugins_.Sprite.prototype.acts.SetAngle,
 	cr.system_object.prototype.exps.random,
 	cr.plugins_.Sprite.prototype.cnds.IsOutsideLayout,
 	cr.plugins_.Sprite.prototype.exps.X,
@@ -18632,9 +18735,21 @@ cr.getObjectRefTable = function () { return [
 	cr.behaviors.EightDir.prototype.acts.SimulateControl,
 	cr.plugins_.Sprite.prototype.cnds.CompareInstanceVar,
 	cr.system_object.prototype.acts.AddVar,
-	cr.system_object.prototype.cnds.Every,
 	cr.system_object.prototype.acts.CreateObject,
 	cr.system_object.prototype.acts.Wait,
 	cr.system_object.prototype.acts.SetVar,
-	cr.system_object.prototype.acts.RestartLayout
+	cr.system_object.prototype.acts.RestartLayout,
+	cr.plugins_.Keyboard.prototype.cnds.OnKey,
+	cr.plugins_.Rex_Pause.prototype.acts.TooglePause,
+	cr.plugins_.Mouse.prototype.cnds.OnObjectClicked,
+	cr.plugins_.Rex_Pause.prototype.cnds.OnPause,
+	cr.system_object.prototype.acts.SetTimescale,
+	cr.plugins_.Sprite.prototype.acts.SetVisible,
+	cr.plugins_.Text.prototype.acts.SetVisible,
+	cr.plugins_.Rex_Pause.prototype.cnds.OnResume,
+	cr.plugins_.Mouse.prototype.cnds.IsOverObject,
+	cr.plugins_.Sprite.prototype.acts.SetScale,
+	cr.plugins_.Text.prototype.acts.SetFontColor,
+	cr.system_object.prototype.exps.rgb,
+	cr.system_object.prototype.acts.SubVar
 ];};
