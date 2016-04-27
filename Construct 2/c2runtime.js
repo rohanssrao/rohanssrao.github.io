@@ -18636,6 +18636,6 @@ cr.getObjectRefTable = function () { return [
 	cr.system_object.prototype.acts.CreateObject,
 	cr.system_object.prototype.acts.Wait,
 	cr.system_object.prototype.acts.SetVar,
-	cr.system_object.prototype.acts.RecreateInitialObjects
+	cr.system_object.prototype.acts.RestartLayout
 ];};
 
