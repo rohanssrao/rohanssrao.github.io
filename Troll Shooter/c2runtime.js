@@ -19863,13 +19863,13 @@ cr.behaviors.scrollto = function(runtime)
 	behaviorProto.acts = new Acts();
 }());
 cr.getObjectRefTable = function () { return [
-	cr.plugins_.Keyboard,
 	cr.plugins_.Mouse,
+	cr.plugins_.Keyboard,
+	cr.plugins_.Text,
+	cr.plugins_.Sprite,
 	cr.plugins_.Touch,
 	cr.plugins_.Rex_Pause,
-	cr.plugins_.Text,
 	cr.plugins_.TiledBg,
-	cr.plugins_.Sprite,
 	cr.behaviors.EightDir,
 	cr.behaviors.scrollto,
 	cr.behaviors.bound,

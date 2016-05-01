@@ -1,0 +1,40 @@
+{
+  "categorization": {
+    "type": "GAME",
+    "category": "Action"
+  },
+  "description": {
+    "texts": {
+      "title": "Troll Shooter",
+      "features": [
+        "Cross-platform: Play on your phone, tablet, and computer!"
+      ],
+      "short-description": "A game where you shoot trolls.",
+      "full-description": "Take revenge on trolls once and for all in this action-packed 60fps top-down shooter! Experience the thrill of destroying trolls as you purchase multiple guns and fight your way through an endless number of trolls (because the internet is full of them).",
+      "keywords": "troll,shooter,troll shooter,top-down,shoot 'em up,endless,top-down",
+      "recent-changes": "",
+      "privacy-policy": "",
+      "eula": ""
+    },
+    "images": {
+      "screenshots": [],
+      "app-icon-small": "",
+      "app-icon": "",
+      "small-promo": "",
+      "large-promo": ""
+    },
+    "videos": {
+      "video-url": ""
+    }
+  },
+  "packages": {
+    "zip-file": "",
+    "apk-file": "",
+    "secondary-apk-file": ""
+  },
+  "support": {
+    "email": "rohanssrao@gmail.com",
+    "website": "https://rohanssrao.github.io"
+  },
+  "testing-instructions": ""
+}
