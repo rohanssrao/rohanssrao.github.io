@@ -7,19 +7,24 @@
     "texts": {
       "title": "Troll Shooter",
       "features": [
-        "Cross-platform: Play on your phone, tablet, and computer!"
+        "Smooth 60fps graphics",
+        "The satisfaction of destroying trolls"
       ],
       "short-description": "A game where you shoot trolls.",
-      "full-description": "Take revenge on trolls once and for all in this action-packed 60fps top-down shooter! Experience the thrill of destroying trolls as you purchase multiple guns and fight your way through an endless number of trolls (because the internet is full of them).",
-      "keywords": "troll,shooter,troll shooter,top-down,shoot 'em up,endless,top-down",
+      "full-description": "An action packed endless top-down shoot-'em-up in which you destroy as many trolls as you can to save the world (or internet, same thing). Developed by Rohan Rao, an 8th grader at Mills Park Middle.",
+      "keywords": "endless,shooter,top-down,troll,trolls,internet",
       "recent-changes": "",
       "privacy-policy": "",
       "eula": ""
     },
     "images": {
-      "screenshots": [],
-      "app-icon-small": "",
-      "app-icon": "",
+      "screenshots": [
+        "../../../../Pictures/screenshot1.PNG",
+        "../../../../Pictures/screenshot2.PNG",
+        "../../../../Pictures/screenshot3.PNG"
+      ],
+      "app-icon-small": "xxxhdpi-troll-114.png",
+      "app-icon": "../../../../Pictures/troll-512.png",
       "small-promo": "",
       "large-promo": ""
     },
@@ -28,9 +33,9 @@
     }
   },
   "packages": {
-    "zip-file": "",
-    "apk-file": "",
-    "secondary-apk-file": ""
+    "zip-file": "../../../../Downloads/trollshooter.cordova.crosswalk.201605023716.zip",
+    "apk-file": "../../../../Downloads/TrollShooter-x86.android.20160502003854.apk",
+    "secondary-apk-file": "../../../../Downloads/TrollShooter-armv7.android.20160502003906.apk"
   },
   "support": {
     "email": "rohanssrao@gmail.com",

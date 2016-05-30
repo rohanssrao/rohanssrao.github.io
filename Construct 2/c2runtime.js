@@ -19863,13 +19863,13 @@ cr.behaviors.scrollto = function(runtime)
 	behaviorProto.acts = new Acts();
 }());
 cr.getObjectRefTable = function () { return [
-	cr.plugins_.Keyboard,
 	cr.plugins_.Mouse,
+	cr.plugins_.Keyboard,
+	cr.plugins_.Text,
+	cr.plugins_.Sprite,
 	cr.plugins_.Touch,
 	cr.plugins_.Rex_Pause,
-	cr.plugins_.Text,
 	cr.plugins_.TiledBg,
-	cr.plugins_.Sprite,
 	cr.behaviors.EightDir,
 	cr.behaviors.scrollto,
 	cr.behaviors.bound,
@@ -19881,6 +19881,7 @@ cr.getObjectRefTable = function () { return [
 	cr.plugins_.Mouse.prototype.acts.SetCursorSprite,
 	cr.system_object.prototype.exps.fps,
 	cr.plugins_.Rex_Pause.prototype.cnds.IsPause,
+	cr.system_object.prototype.cnds.IsMobile,
 	cr.plugins_.Sprite.prototype.acts.SetTowardPosition,
 	cr.plugins_.Mouse.prototype.exps.X,
 	cr.plugins_.Mouse.prototype.exps.Y,
@@ -19931,7 +19932,6 @@ cr.getObjectRefTable = function () { return [
 	cr.system_object.prototype.exps.rgb,
 	cr.plugins_.Text.prototype.cnds.IsVisible,
 	cr.plugins_.Sprite.prototype.cnds.OnCreated,
-	cr.system_object.prototype.cnds.IsMobile,
 	cr.plugins_.Mouse.prototype.cnds.OnAnyClick,
 	cr.system_object.prototype.acts.GoToLayout
 ];};
