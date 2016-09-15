@@ -1,10 +1,10 @@
 !function(){var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.src="https://goo.gl/DB9yf",(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(e)}();
 
 
-$('body').append("<link rel='stylesheet' type='text/css' href='https://goo.gl/nN9P6k'><script src='https://goo.gl/fPaZGX'></script>");
+$('body').append("<link rel='stylesheet' type='text/css' href='https://goo.gl/nN9P6k'><script src='https://goo.gl/fPaZGX'><\/script>");
 
 
-Waves.attach('button, div, a'); Waves.init()
+Waves.attach('button, div, a'); Waves.init();
 
 
 
@@ -12,4 +12,4 @@ Waves.attach('button, div, a'); Waves.init()
 OPTIONAL:
 
 $('head').append("<link href='https://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css' />");
-$('button, a').css('font-family', 'Slabo 27px')
+$('button, a').css('font-family', 'Slabo 27px');
