@@ -5,7 +5,7 @@
    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab|Roboto+Condensed|Slabo+27px' rel='stylesheet' type='text/css'>
    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=false">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
-   <link rel="shortcut icon" href="http://orig04.deviantart.net/e8d1/f/2014/276/f/6/cm_torch_icon_inspired_by_material_design_by_hitfan1996-d81gff9.png">
+   <link rel="shortcut icon" href="favicon.png">
    <style>
       a { display: block; margin: .7em; border-radius: 20px !important;}
       body { background: rgb(238, 238, 238); text-align: center; font-family: 'Slabo 27px';}
@@ -16,10 +16,11 @@
    <h1>HI THERE!</h1>
    <p id="clickTap">Click these links to go to my latest and (not so) greatest projects.</p>
    <br />
-   <a id="firstA" href="CreateJS/index.html" class="btn waves-effect waves-light">CreateJS Demo</a>
-   <a id="secondA" href="MaterializeCSS/material.html" class="btn waves-effect waves-light">Material!</a>
-   <a id="thirdA" href="fun.html" class="btn waves-effect waves-light">Fun!</a>
-   <a id="fourthA" href="Construct 2/index.html" class="btn waves-effect waves-light">Troll Shooter</a>
+   <a id="a1" href="CreateJS/index.html" class="btn waves-effect waves-light">CreateJS Demo</a>
+   <a id="a2" href="MaterializeCSS/material.html" class="btn waves-effect waves-light">Material!</a>
+   <a id="a3" href="fun.html" class="btn waves-effect waves-light">Fun!</a>
+   <a id="a4" href="Construct 2/index.html" class="btn waves-effect waves-light">Troll Shooter</a>
+   <a id="a5" href="PreviewImage/index.html" class="btn waves-effect waves-light">PreviewImage</a>
    <br />
    <iframe src="https://embed.spotify.com/?uri=spotify%3Auser%3Anitronster1017%3Aplaylist%3A5Nr7MteR58HF8a7qGXd6dl" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
 
@@ -31,18 +32,23 @@
    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
    <script src='https://cdnjs.cloudflare.com/ajax/libs/randomcolor/0.4.4/randomColor.min.js'></script>
    <script>
-   $(document).ready(function() {
+	$(document).ready(function() {
 
-      function isTouchDevice(){ return (window.ontouchstart !== undefined); };
-      if (isTouchDevice()) {$('#clickTap').text('Tap these links to go to my latest and (not so) greatest projects.')};
-      $('h1').css('color', randomColor({'luminosity': 'dark'}));
-      $('a.btn').each(function() {$(this).css('background-color', randomColor({'luminosity': 'dark'}));})
+	  if (window.ontouchstart !== undefined) {
+	  	$('#clickTap').text('Tap these links to go to my latest and (not so) greatest projects.')
+	  };
 
-   });
+	  $('h1').css('color', randomColor({'luminosity': 'dark'}));
 
-      if (window.location.host.indexOf('github.io') > -1 && window.location.protocol != "https:"){
-          window.location.protocol = "https";
-      }
+	  $('a.btn').each(function() {
+	  	$(this).css('background-color', randomColor({'luminosity': 'dark'}));
+	  });
+
+	});
+
+	if (window.location.host.indexOf('github.io') > -1 && window.location.protocol != "https:"){
+	  window.location.protocol = "https";
+	}
    </script>
 </body>
 </html>
